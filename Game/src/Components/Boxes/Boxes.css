@@ -1,0 +1,21 @@
+.Boxes{
+   width: 70px;
+   aspect-ratio: 1;
+}
+
+.btn-container{
+    width: fit-content;
+    margin: 0 auto;
+}
+
+.red, .blue{
+    width: 50px;
+    aspect-ratio: 1;
+    background-color: red;
+    border-radius: 50%;
+    margin: 0 auto;
+}
+
+.blue{
+    background-color: blue;
+}
