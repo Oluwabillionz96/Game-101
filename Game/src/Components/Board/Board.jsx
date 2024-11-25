@@ -4,7 +4,8 @@ import { useState } from 'react';
 export default function Board() {
     const [squares, setSquares] = useState(Array(49).fill(null));
     const [redIsNext, setRedIsNext] = useState(true);
-
+    const red = <div className='red'></div>;
+    const blue = <div className='blue'></div>;
     function handleClick(i){
         const nextSquares = squares.slice()
 
@@ -12,8 +13,8 @@ export default function Board() {
             return;
         }
 
-        nextSquares[i] = redIsNext === true ? <div className='red'></div> :
-            <div className='blue'></div>
+        nextSquares[i] = redIsNext === true ? red : blue;
+            
         setSquares(nextSquares);
         setRedIsNext(!redIsNext)
     }
@@ -80,9 +81,9 @@ export default function Board() {
             
         ];
 
-        for (let i = 0; i < lines.length; i++){
+        for (let i = 0; i < lines.length; i++) {
             const [a, b, c, d, e] = lines[i];
-            // console.log(a,b,c,d,e);
+            console.log(squares[a]);
             if (squares[a] && squares[a] === squares[b] && squares[a] === squares[c] && squares[a] === squares[d] && squares[a] === squares[e]){
                 return squares[a];
              }
